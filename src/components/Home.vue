@@ -22,8 +22,10 @@
 <script>
 export default {
   name: 'home',
-  firebase: {
-    cats: this.$db.ref('cats')
+  firebase: function () {
+    return {
+      cats: this.$db.ref('cats')
+    }
   },
   computed: {
     latestCats: function () {
