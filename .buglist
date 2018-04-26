@@ -1,0 +1,27 @@
+app js kurang export default
+
+install router
+
+ganti api, ganti response.data
+
+mounted bentuk nya function 
+
+Home.vue computed latest cats kurang function
+
+mounted di Post.vue kurang ()
+
+app.vue kurang export default
+
+install package router
+
+fix es lint di App.vue problem sampai bisa jalan
+
+tambah git ignore node modules
+
+kurang $ di router
+
+fix router bisa jalan
+
+fix firebase
+
+add post page bisa muncul
