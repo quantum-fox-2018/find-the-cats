@@ -16,6 +16,7 @@
         </router-link>
       </md-card-actions>
     </md-card>
+    {{ latestCats }}
   </div>
 </template>
 
@@ -30,6 +31,9 @@ export default {
     latestCats: function () {
       this.cats.reverse()
     }
+  },
+  created: function () {
+    console.log(this.cats)
   }
 }
 </script>
