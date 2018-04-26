@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="home">
-    <h1>Home</h1>
+    <marquee><h1>Home</h1> </marquee>
     <md-card v-for="cat in latestCats" :key="cat['.key']">
       <md-card-media>
         <img :src="cat.url" :alt="cat.comment">

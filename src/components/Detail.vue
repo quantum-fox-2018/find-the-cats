@@ -1,5 +1,5 @@
 <template lang="html">
-  <md-card>
+  <md-card class="detail">
     <md-card-header>
       <md-card-header-text>
         <div class="md-title">{{ cat.comment }}</div>
@@ -31,4 +31,7 @@ export default {
 </script>
 
 <style lang="css">
+.detail {
+  margin: 0 auto;
+}
 </style>
