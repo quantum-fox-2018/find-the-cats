@@ -27,7 +27,7 @@ export default {
     }
   },
   computed: {
-    latestCats: {
+    latestCats: function() {
       this.cats.reverse()
     }
   }
