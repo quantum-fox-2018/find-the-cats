@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="home">
-    <h1>Home</h1>
+    <h1>This is Home</h1>
     <md-card v-for="cat in latestCats" :key="cat['.key']">
       <md-card-media>
         <img src="cat.url" :alt="cat.comment">
@@ -21,13 +21,16 @@
 
 <script>
 export default {
-  firebase () {
-    {
-      cats: this.$db.ref('cats');
+  data () {
+    return {
+      test: 'testing'
     }
   },
+  firebase: {
+    cats: this.$db.ref('cats')
+  },
   computed: {
-    latestCats: {
+    latestCats () {
       this.cats.reverse()
     }
   }
