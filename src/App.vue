@@ -20,11 +20,11 @@
         <md-list>
           <md-list-item @click.native="toggleSideNavLeft('/')">
             <md-icon>home</md-icon>
-            <span>Home</span>
+            <span><button class="btn btn-link" @click="goToHome">Home</button></span>
           </md-list-item>
           <md-list-item @click.native="toggleSideNavLeft('/post')">
             <md-icon>add</md-icon>
-            <span>New Post</span>
+            <span @click="goToPost">New Post</span>
           </md-list-item>
         </md-list>
       </div>
@@ -37,16 +37,23 @@
 </template>
 
 <script>
-export {
-  name: 'app'
+export default{
+  name: 'app',
   methods: {
-    toggleSideNavLeft(route) {
-      if (typeof (route) == 'object') {
+    toggleSideNavLeft (route) {
+      if (typeof (route) === 'object') {
         this.$refs.leftSidenav.toggle()
       } else {
         this.$refs.leftSidenav.toggle()
         this.router.push(route)
       }
+    },
+    goToPost () {
+      console.log(this.$router)
+      this.$router.push('/post')
+    },
+    goToHome () {
+      this.$router.push('/home')
     }
   }
 }
