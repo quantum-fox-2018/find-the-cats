@@ -2,7 +2,7 @@
   <div id="app">
     <!-- Toolbar header -->
     <md-toolbar id="toolbar-header">
-      <md-button class="md-icon-button" @click.native="toggleSideNavLeft">
+      <md-button class="md-icon-button" @click="toggleSideNavLeft">
         <md-icon>menu</md-icon>
       </md-button>
       <h1 class="md-title" style="flex: 1">Progressive Tamvan</h1>
@@ -16,13 +16,13 @@
         </div>
       </md-toolbar>
 
-      <div class="phone-viewport">
+       <div class="phone-viewport">
         <md-list>
-          <md-list-item @click.native="toggleSideNavLeft('/')">
+          <md-list-item @click="toggleSideNavLeft('/')">
             <md-icon>home</md-icon>
             <span>Home</span>
           </md-list-item>
-          <md-list-item @click.native="toggleSideNavLeft('/post')">
+          <md-list-item @click="toggleSideNavLeft('/post')">
             <md-icon>add</md-icon>
             <span>New Post</span>
           </md-list-item>
