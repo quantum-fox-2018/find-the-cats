@@ -31,17 +31,25 @@
     </md-sidenav>
 
     <md-layout md-gutter class="container">
+      <!-- <router-view></router-view> -->
       <router-view></router-view>
     </md-layout>
   </div>
 </template>
 
 <script>
-export {
-  name: 'app'
+import Detail from '@/components/Detail'
+import Home from '@/components/Home'
+import Post from '@/components/Post'
+
+export default {
+  name: 'app',
+  components: {
+    Detail, Home, Post
+  },
   methods: {
-    toggleSideNavLeft(route) {
-      if (typeof (route) == 'object') {
+    toggleSideNavLeft (route) {
+      if (typeof (route) === 'object') {
         this.$refs.leftSidenav.toggle()
       } else {
         this.$refs.leftSidenav.toggle()
