@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data () {
     return {
@@ -48,7 +50,7 @@ export default {
   },
   methods: {
     getCat() {
-      this.$http.get('http://random.cat/meow')
+      axios.get('https://yesno.wtf/api')
         .then((response) => {
           this.randomCat.url = response.data.file
           setTimeout(() => { this.loading = false }, 1000)
