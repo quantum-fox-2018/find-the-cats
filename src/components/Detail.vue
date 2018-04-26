@@ -17,15 +17,20 @@
 </template>
 
 <script>
+import {db} from '../firebase'
+
+const catsRef = db.ref('cats')
+
 export default {
   props: ['id'],
-  firebase () {
-    return {
-      cat: {
-        asObject: true,
-        source: this.$db.ref('cats').child(this.id),
-      }
-    },
+  firebase: {
+    cat: {
+      asObject: true,
+      source: catsRef.child(this.id)
+    }
+  },
+  mounted: function () {
+    console.log('masuk sini')
   }
 }
 </script>
