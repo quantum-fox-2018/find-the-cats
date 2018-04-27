@@ -27,7 +27,7 @@
       </md-card-content>
 
       <md-card-actions>
-        <md-button type="button" class="md-raised md-primary" @click.native="postCat">Post</md-button>
+        <md-button type="button" class="md-raised md-primary" @click.native="postCat()">Post</md-button>
       </md-card-actions>
     </md-card>
   </div>
@@ -43,30 +43,40 @@ export default {
         detail: ''
       },
       loading: true,
-      err: false,
+      err: false
     }
   },
   methods: {
-    getCat() {
-      this.$http.get('http://random.cat/meow')
+    getCat () {
+      this.$http.get('https://yesno.wtf/api')
         .then((response) => {
-          this.randomCat.url = response.data.file
+          this.randomCat.url = response.data.image
           setTimeout(() => { this.loading = false }, 1000)
         })
         .catch((err) => {
           this.err = err
         })
     },
-    postCat() {
+    postCat () {
       console.log('postCat ', this.randomCat)
       this.$db.ref('cats').push(this.randomCat, () => {
-        this.$router.push('/');
+        this.$router.push('/')
       })
     }
   },
-  mounted: {
+  mounted: function () {
     this.getCat()
   }
+}
+</script>
+
+<style lang="css" scoped>
+#post-cat,
+.md-card {
+  width: 100%;
+}
+.md-card-media {
+  text-align: center;
 }
 </script>
 
