@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="home">
     <h1>Home</h1>
-    <md-card v-for="cat in latestCats" :key="cat['.key']">
+    <md-card v-for="cat in cats" :key="cat['.key']">
       <md-card-media>
         <img src="cat.url" :alt="cat.comment">
       </md-card-media>
@@ -23,12 +23,7 @@
 export default {
   firebase () {
     {
-      cats: this.$db.ref('cats');
-    }
-  },
-  computed: {
-    latestCats: {
-      this.cats.reverse()
+      cats: this.$db.ref('cats')
     }
   }
 }

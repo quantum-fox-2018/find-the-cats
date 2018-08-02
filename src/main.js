@@ -4,14 +4,14 @@ import Vue from 'vue'
 import VueFire from 'vuefire'
 import axios from 'axios'
 import App from './App'
-import router from 'router'
+import router from '.router'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import firebase from 'firebase'
 const config = {
-  apiKey: 'AIzaSyBqyuyv9cLau8z4pv6U_FDJvf2sR11PlDc',
-  databaseURL: 'https://progressive-tamvan.firebaseio.com',
-  projectId: 'progressive-tamvan'
+  apiKey: 'AIzaSyC_ISOPyzxLJM7oCs38jO75b8ITFqhIEPE',
+  databaseURL: 'https://thefox-91a39.firebaseio.com',
+  projectId: 'thefox-91a39'
 }
 const firebaseApp = firebase.initializeApp(config)
 

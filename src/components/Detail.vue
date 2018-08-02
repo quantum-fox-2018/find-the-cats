@@ -7,7 +7,7 @@
     </md-card-header>
 
     <md-card-media>
-      <img :src="cat.url" :alt="cat.comment">
+      <img src="cat.url" :alt="cat.comment">
     </md-card-media>
 
     <md-card-content>
@@ -20,12 +20,12 @@
 export default {
   props: ['id'],
   firebase () {
-    return {
+    {
       cat: {
         asObject: true,
-        source: this.$db.ref('cats').child(this.id),
+        source: this.$db.ref('cats').child(this.id)
       }
-    },
+    }
   }
 }
 </script>
